@@ -4,7 +4,7 @@ import { shadekoApi } from '../../RTK_Query';
 import { MdAccountCircle,MdFavorite } from '../../../node_modules/react-icons/md'
 import { RiShoppingBasketFill } from '../../../node_modules/react-icons/ri'
 import { SiShopify } from '../../../node_modules/react-icons/si'
-import Drawer from '../Drawer';
+import Drawer from '../Basket';
 
 function Header() {
 

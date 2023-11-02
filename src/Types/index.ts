@@ -205,8 +205,20 @@ export interface IfavoriteCard {
   price: number
 }
 
+export interface IbasketCardForRedux {
+  id: number
+  title: string
+  image: string
+  price: number
+  quantity: number
+}
+
 export interface IfavoriteRedux {
   favorite: IfavoriteCard[]
+}
+
+export interface IbasketRedux {
+  basket: IbasketCardForRedux[]
 }
 
 export interface IfavoritesCardProps {
@@ -234,5 +246,16 @@ export interface IresponseMaterialsForSingle {
   meta: Ipagination
 }
 
+export interface IcounterProps {
+  initialValue?: number
+  getValue?: (count: number) => void
+}
+
+export interface IbasketElement {
+  e: IbasketCardForRedux
+}
+
 export type ChangeTextForCurrentColor = (currentText: string) => void
 export type TaddToFavorite = (id: number, image: string, price: number, title: string) => void
+export type TcountProduct = (count: number) => void
+export type TclickOnButtonAddToBasket = (id: number, title: string, image: string, price: number, quantity: number) => void

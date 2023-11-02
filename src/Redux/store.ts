@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { shadekoApi } from '../RTK_Query/index'
 import favoriteReducer from './favoriteReducer'
+import basketReducer from './basketReducer'
 import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore, persistReducer } from 'redux-persist'
 
 import storage from 'redux-persist/lib/storage'
@@ -13,11 +14,13 @@ const persistConfig = {
 }
 
 const persistedFavoriteReducer = persistReducer(persistConfig, favoriteReducer)
+const persistedBasketReducer = persistReducer(persistConfig, basketReducer)
 
 export const store = configureStore({
   reducer: {
     [shadekoApi.reducerPath]: shadekoApi.reducer,
-    favorite: persistedFavoriteReducer
+    favorite: persistedFavoriteReducer,
+    basket: persistedBasketReducer
   },
   devTools: { trace: true, traceLimit: 25 },
   middleware: (getDefaultMiddleware) =>
