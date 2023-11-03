@@ -9,7 +9,9 @@ export default {
       width: {
         '200': '200px',
       },
-     
+      gridTemplateColumns: {
+        '25-75': '0.25fr 0.75fr',
+      }
     },
   },
   plugins: [],

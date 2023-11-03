@@ -259,3 +259,4 @@ export type ChangeTextForCurrentColor = (currentText: string) => void
 export type TaddToFavorite = (id: number, image: string, price: number, title: string) => void
 export type TcountProduct = (count: number) => void
 export type TclickOnButtonAddToBasket = (id: number, title: string, image: string, price: number, quantity: number) => void
+export type TtotalPrice = (arr: number[]) => number
