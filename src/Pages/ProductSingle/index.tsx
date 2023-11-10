@@ -68,6 +68,7 @@ function ProductSingle (): JSX.Element {
                   className='bg-zinc-200 text-black rounded-none font-semibold py-3 px-8 transition hover:bg-zinc-400'
                   onClick={() => {
                     clickOnButtonAddToBasket(clearID, clearTitle, clearImageUrl, clearPrice, countProducts)
+                    setCountProducts(1)
                   }}
                   >Add to basket</button>
                 </div>

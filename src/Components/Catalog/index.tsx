@@ -3,6 +3,7 @@ import { shadekoApi } from 'src/RTK_Query'
 import Card from '../Card'
 import ColorsCatalog from 'src/Components/ColorsCatalog'
 import type { IcardsSingle } from 'src/Types'
+import MaterialsCaralog from '../MaterialsCatalog'
 
 function Catalog (): any {
   const [currentPage, setCurrentPage] = React.useState<number>(1)
@@ -14,10 +15,17 @@ function Catalog (): any {
   React.useEffect(() => {
     (data != null) && (products.length !== 0 ? setProducts([...products, ...data?.data]) : setProducts(data?.data))
   }, [data])
+
+
   return (
         <div className='p-10'>
             <div className="filters mb-5">
+            <div className='grid grid-cols-4'>
+
             <ColorsCatalog />
+            
+            <MaterialsCaralog />
+            </div>
         </div>
             <div className="grid grid-cols-4 gap-x-3 gap-y-5 ">
                 {

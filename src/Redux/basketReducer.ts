@@ -17,6 +17,11 @@ export const basketSlice = createSlice({
 
       if (!isItemInBasket) {
         state.basket = [...state.basket, action.payload]
+      } else {
+        const foundItemIndex = state.basket.findIndex((item) => item.id === id)
+        if (foundItemIndex !== -1) {
+          state.basket[foundItemIndex].quantity = state.basket[foundItemIndex].quantity + action.payload.quantity
+        }
       }
     },
 

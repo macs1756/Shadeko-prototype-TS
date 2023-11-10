@@ -28,6 +28,9 @@ export const shadekoApi = createApi({
     getColors: builder.query<Icolors, null>({
       query: () => '/colors?populate=*'
     }),
+    getMaterials: builder.query<Icolors, null>({
+      query: () => '/materials?populate=*'
+    }),
 
     getCards: builder.query<Icards, number>({
       query: (currentPage) => ({
@@ -66,4 +69,13 @@ export const shadekoApi = createApi({
   })
 })
 
-export const { useGetCategoriesQuery, useGetSubcategoryQuery, useGetColorsQuery, useGetCardsQuery, useGetColorsForCardSingleQuery, useGetMaterialsForCardSingleQuery } = shadekoApi
+export const
+  {
+    useGetCategoriesQuery,
+    useGetSubcategoryQuery,
+    useGetColorsQuery,
+    useGetCardsQuery,
+    useGetColorsForCardSingleQuery,
+    useGetMaterialsForCardSingleQuery,
+    useGetMaterialsQuery
+  } = shadekoApi

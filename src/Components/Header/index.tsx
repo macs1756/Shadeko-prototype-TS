@@ -7,7 +7,7 @@ import { SiShopify } from '../../../node_modules/react-icons/si'
 import Drawer from '../Basket'
 
 function Header (): JSX.Element {
-  const [drawerIsActive, setDrawerIsActive] = React.useState<boolean>(true)
+  const [drawerIsActive, setDrawerIsActive] = React.useState<boolean>(false)
   const { data, isLoading, error } = shadekoApi.useGetCategoriesQuery('categories')
 
   return (
